@@ -40,27 +40,25 @@ public class UserTest {
 
   @Test
   public void reputationGoesUpBy10ForUpvotedAnswer(){
-
     int bobReputationBeforeAnswered = bob.getReputation();
 
     Question question = alice.askQuestion("What is a String?");
     Answer answer = bob.answerQuestion(question, "An array of characters");
     alice.upVote(answer);
-
     int bobReputationAfterAnswered = bob.getReputation();
+
     assertEquals(10, (bobReputationAfterAnswered - bobReputationBeforeAnswered));
   }
 
   @Test
   public void reputationBoostBy15PointForAcceptedAnswer(){
-
     int bobReputationBeforeAnswered = bob.getReputation();
 
     Question question = alice.askQuestion("What is a String?");
     Answer answer = bob.answerQuestion(question, "An array of characters");
     alice.acceptAnswer(answer);
-
     int bobReputationAfterAnswered = bob.getReputation();
+
     assertEquals(15, (bobReputationAfterAnswered - bobReputationBeforeAnswered));
   }
 
@@ -74,8 +72,8 @@ public class UserTest {
     Question question = alice.askQuestion("What is a String?");
     Answer answer = bob.answerQuestion(question, "An array of characters");
     alice.downVote(answer);
-
     int bobReputationAfterAnswered = bob.getReputation();
+
     assertEquals(-1, (bobReputationAfterAnswered - bobReputationBeforeAnswered));
   }
 
@@ -104,7 +102,4 @@ public class UserTest {
     Answer answer = bob.answerQuestion(question, "An array of characters");
     bob.acceptAnswer(answer);
   }
-
-
-
 }
