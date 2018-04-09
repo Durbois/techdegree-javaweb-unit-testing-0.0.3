@@ -102,7 +102,7 @@ public class UserTest {
 
     Question question = alice.askQuestion("What is a String?");
     Answer answer = bob.answerQuestion(question, "An array of characters");
-    
+
     bob.acceptAnswer(answer);
   }
 }
