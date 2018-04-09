@@ -88,8 +88,8 @@ public class UserTest {
   @Test(expected = VotingException.class)
   public void upVoteNotAllowedByAuthorOfAnswer(){
     Question question = alice.askQuestion("What is a String?");
-
     Answer answer = bob.answerQuestion(question, "An array of characters");
+
     bob.upVote(answer);
   }
 
@@ -101,8 +101,8 @@ public class UserTest {
     thrown.expectMessage(message);
 
     Question question = alice.askQuestion("What is a String?");
-    
     Answer answer = bob.answerQuestion(question, "An array of characters");
+    
     bob.acceptAnswer(answer);
   }
 }
